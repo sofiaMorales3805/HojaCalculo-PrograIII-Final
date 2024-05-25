@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane fx:id="rootPane" prefHeight="567.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.VistaExcelPrincipalController">
+    <center>
+        <TableView fx:id="tblExcel" prefHeight="428.0" prefWidth="663.0" BorderPane.alignment="CENTER" />
+    </center>
+    <top>
+        <MenuBar fx:id="menuOpcionesTop" layoutY="1.0" prefHeight="36.0" prefWidth="787.0">
+            <menus>
+                <Menu fx:id="menuUnicoArchivo" mnemonicParsing="false" text="Archivo">
+                    <items>
+                        <MenuItem fx:id="menuOpcionGuardar" mnemonicParsing="false" text="Guardar" />
+                        <MenuItem fx:id="menuOpcionCargar" mnemonicParsing="false" text="Cargar" />
+                        <MenuItem fx:id="menuOpcionHash" mnemonicParsing="false" text="Tabla Hash" />
+                    </items>
+                </Menu>
+                <Menu fx:id="menuOpcionInsertar" mnemonicParsing="false" text="Insertar">
+                    <items>
+                        <MenuItem fx:id="menuOpcionSuma" mnemonicParsing="false" text="Suma" />
+                        <MenuItem fx:id="menuOpcionResta" mnemonicParsing="false" text="Resta" />
+                        <MenuItem fx:id="menuOpcionMulti" mnemonicParsing="false" text="Multiplicacion" />
+                        <MenuItem fx:id="menuOpcionDiv" mnemonicParsing="false" text="Division" />
+                    </items>
+                </Menu>
+                <Menu fx:id="menuUnicoAyuda" mnemonicParsing="false" text="Ayuda">
+                    <items>
+                        <MenuItem fx:id="menuOpcionCerrar" mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <bottom>
+        <TabPane fx:id="tabPaneMenuBottom" prefHeight="29.0" prefWidth="663.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab fx:id="tabNameHoja" text="Hoja 1" />
+                <Tab fx:id="tabAddHoja" text="+" />
+            </tabs>
+        </TabPane>       
+    </bottom>
+</BorderPane>
