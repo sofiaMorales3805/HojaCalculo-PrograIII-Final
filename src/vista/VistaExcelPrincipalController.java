@@ -67,6 +67,10 @@ public class VistaExcelPrincipalController<T> implements Initializable {
     @FXML
     private MenuItem menuOpcionDiv;
     @FXML
+    private MenuItem menuOpcionRaiz;
+    @FXML
+    private MenuItem menuOpcionPotencia;
+    @FXML
     private MenuItem menuOpcionCargar;
     @FXML
     private MenuItem menuOpcionHash;
@@ -88,6 +92,8 @@ public class VistaExcelPrincipalController<T> implements Initializable {
         menuOpcionResta.setOnAction(event -> insertarFormula(menuOpcionResta));
         menuOpcionMulti.setOnAction(event -> insertarFormula(menuOpcionMulti));
         menuOpcionDiv.setOnAction(event -> insertarFormula(menuOpcionDiv));
+        menuOpcionRaiz.setOnAction(event -> insertarFormula(menuOpcionRaiz));
+        menuOpcionPotencia.setOnAction(event -> insertarFormula(menuOpcionPotencia));
         
         tblExcel.getSelectionModel().setCellSelectionEnabled(true);
 
@@ -242,6 +248,20 @@ public class VistaExcelPrincipalController<T> implements Initializable {
                             args[i] = Double.parseDouble(argumentos[i]);
                         }
                         selectedCell.setContenidoCelda(String.valueOf(Funciones.division(args)));
+                    } else if (operacion.equals("RAIZ")) {
+                        double[] args = new double[argumentos.length];
+                        for (int i = 0; i < argumentos.length; i++) {
+                            args[i] = Double.parseDouble(argumentos[i]);
+                        }
+                         // Llamada a la función raizCuadrada con el primer argumento como parámetro
+                        selectedCell.setContenidoCelda(String.valueOf(Funciones.raizCuadrada(args[0])));
+                    } else if (operacion.equals("POTENCIA")) {
+                        double[] args = new double[argumentos.length];
+                        for (int i = 0; i < argumentos.length; i++) {
+                            args[i] = Double.parseDouble(argumentos[i]);
+                        }
+                        // Llamada a la función elevarPotencia con los dos primeros argumentos como base y exponente
+                        selectedCell.setContenidoCelda(String.valueOf(Funciones.elevarPotencia(args[0], args[1])));
                     }
                 }
                 
@@ -271,6 +291,10 @@ public class VistaExcelPrincipalController<T> implements Initializable {
             selectedCell.setContenidoCelda("=multiplicar(");
         } else if (menuItemText.equals("Division")) {
             selectedCell.setContenidoCelda("=dividir(");
+        } else if (menuItemText.equals("Raiz")) {
+            selectedCell.setContenidoCelda("=raiz(");
+        }else if (menuItemText.equals("Potencia")) {
+            selectedCell.setContenidoCelda("=potencia(");
         }
 
         // Agregar un paréntesis de cierre para que el usuario pueda completar la fórmula

@@ -51,4 +51,19 @@ public class Funciones {
         }
         return resultado;
     }
+    
+    // Función para sacar raíz cuadrada
+    public static double raizCuadrada(double numero) {
+        if (numero < 0) {
+            throw new ArithmeticException("No se puede calcular la raíz cuadrada de un número negativo");
+        }
+        return Math.sqrt(numero);
+    }
+    
+    //Función para resultado de un numero elevado a otro numero
+    public static double elevarPotencia(double base, double exponente) {
+        return Math.pow(base, exponente);
+    }
+
+    
 }

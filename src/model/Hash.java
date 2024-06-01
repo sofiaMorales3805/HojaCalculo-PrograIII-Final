@@ -13,7 +13,7 @@ public class Hash {
         table = new ObservableList[size];
         initializeTable();
     }
-
+    //Este método inicializa cada bucket en la tabla de dispersión con una lista observable vacía.
     private void initializeTable() {
         for (int i = 0; i < size; i++) {
             table[i] = FXCollections.observableArrayList();
@@ -32,14 +32,16 @@ public class Hash {
         return list.contains(data);
     }
 
-    public ObservableList<ObservableList<Integer>> getAllCubetas() {
-        ObservableList<ObservableList<Integer>> cubetas = FXCollections.observableArrayList();
-        for (ObservableList<Integer> cubeta : table) {
-            cubetas.add(cubeta);
+    //Devuelve todas los buckets de la tabla de dispersión como una lista observable de listas observables.
+    public ObservableList<ObservableList<Integer>> getAllBuckets() {
+        ObservableList<ObservableList<Integer>> buckets = FXCollections.observableArrayList();
+        for (ObservableList<Integer> bucket : table) {
+            buckets.add(bucket);
         }
-        return cubetas;
+        return buckets;
     }
 
+    //Es una función hash,toma una clave y devuelve un índice en la tabla de dispersión.
     public int hashFunction(int key) {
         return key % size;
     }

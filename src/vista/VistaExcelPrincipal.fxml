@@ -29,6 +29,8 @@
                         <MenuItem fx:id="menuOpcionResta" mnemonicParsing="false" text="Resta" />
                         <MenuItem fx:id="menuOpcionMulti" mnemonicParsing="false" text="Multiplicacion" />
                         <MenuItem fx:id="menuOpcionDiv" mnemonicParsing="false" text="Division" />
+                        <MenuItem fx:id="menuOpcionRaiz" mnemonicParsing="false" text="Raiz" />
+                        <MenuItem fx:id="menuOpcionPotencia" mnemonicParsing="false" text="Potencia" />
                     </items>
                 </Menu>
                 <Menu fx:id="menuUnicoAyuda" mnemonicParsing="false" text="Ayuda">
